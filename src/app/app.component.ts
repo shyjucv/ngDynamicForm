@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
 
   }
 
-  open(content) {
+  open(content,key) {
+    alert(key);
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -40,10 +41,6 @@ export class AppComponent implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
-  }
-
-  showEditor(){
-    alert('open a model here');
   }
 }
 

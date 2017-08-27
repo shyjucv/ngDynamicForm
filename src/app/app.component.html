@@ -1,5 +1,9 @@
-<div  (click)="open(content)">
-  {{data?.id}}
+<div  (click)="open(content,data?.contents[0].key)">
+  {{data?.contents[0].value}}
+</div>
+
+<div  (click)="open(content,data?.contents[1].key)">
+  {{data?.contents[1].value}}
 </div>
 <div>
  
