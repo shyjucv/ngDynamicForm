@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
@@ -7,14 +7,20 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   closeResult: string;
-   data: any;
+   data: WebContent;
 
   constructor(private modalService: NgbModal, private http: Http)
   {
-      this.http.get('assets/websiteData.json')
-                .subscribe(res => this.data = res.json());
+     
+  }
+
+  ngOnInit(){
+
+    this.http.get('assets/websiteData.json')
+    .subscribe(res => this.data = <WebContent> res.json());
+
   }
 
   open(content) {
@@ -40,3 +46,13 @@ export class AppComponent {
     alert('open a model here');
   }
 }
+
+interface WebContent{
+id:string;
+contents:content[];
+}
+interface content{
+key:string;
+value:string;
+}
+
