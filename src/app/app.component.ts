@@ -10,6 +10,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent implements OnInit {
   closeResult: string;
    data: WebContent;
+   selectedContent: content;
 
   constructor(private modalService: NgbModal, private http: Http)
   {
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   open(content,key) {
-    alert(key);
+    this.selectedContent=this.data.contents[key];    
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

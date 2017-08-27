@@ -1,8 +1,8 @@
-<div  (click)="open(content,data?.contents[0].key)">
+<div  (click)="open(content,0)">
   {{data?.contents[0].value}}
 </div>
 
-<div  (click)="open(content,data?.contents[1].key)">
+<div  (click)="open(content,1)">
   {{data?.contents[1].value}}
 </div>
 <div>
@@ -16,7 +16,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <p>One fine body&hellip;</p>
+      <p>{{selectedContent.value}}</p>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
