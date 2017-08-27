@@ -1,0 +1,13 @@
+{
+  "id": {},
+  "contents": [
+    {
+      "key": "content1",
+      "value": "value of content 1"
+    },
+    {
+      "key": "content2",
+      "value": "value of content 2"
+    }
+  ]
+}
