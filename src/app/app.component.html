@@ -10,13 +10,18 @@
 </div>
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
-      <h4 class="modal-title">Modal title</h4>
+      <h4 class="modal-title">{{selectedContent.key}}</h4>
       <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <p>{{selectedContent.value}}</p>
+        <ckeditor
+        [(ngModel)]=selectedContent.value
+        [config]="{uiColor: '#99000'}"
+        [readonly]="false"       
+        debounce="500">
+      </ckeditor>      
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,10 @@ export class AppComponent implements OnInit {
   closeResult: string;
    data: WebContent;
    selectedContent: content;
-
+   ckeditorContent: any;
   constructor(private modalService: NgbModal, private http: Http)
   {
-     
+    this.ckeditorContent = `<p>My HTML</p>`;
   }
 
   ngOnInit(){
